@@ -16,15 +16,15 @@ const Education = () => {
                     <div className="absolute -left-4 -top-2 -bottom-2 w-1 bg-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                     <h3 className="text-sm font-bold text-white">Pamantasan ng Lungsod ng Maynila</h3>
-                    <p className="text-xs text-slate-500 mb-1">Intramuros, Manila</p>
+                    <p className="text-xs text-slate-500 mb-1">General Luna corner Muralla Streets, Intramuros, Manila, 1002 Metro Manila, Philippines</p>
                     <p className="text-sm font-semibold text-cyan-400">BS Information Technology</p>
-                    <p className="text-xs text-slate-500 font-mono mt-1">2021 – Present</p>
+                    <p className="text-xs text-slate-500 font-mono mt-1">2022 – Present</p>
                 </div>
 
                 {/* Secondary */}
                 <div className="group relative">
                     <h3 className="text-sm font-bold text-slate-300 group-hover:text-white transition-colors">AMA Computer Learning Center</h3>
-                    <p className="text-xs text-slate-500 mb-1">Northbay Campus</p>
+                    <p className="text-xs text-slate-500 mb-1">2nd Floor/3rd Floor MTSC Bldg. Corner Capulong Juan Luna Street, Tondo, Philippines</p>
                     <p className="text-sm font-medium text-slate-400">ICT Strand</p>
                     <p className="text-xs text-slate-500 font-mono mt-1">2022</p>
                 </div>
@@ -32,6 +32,7 @@ const Education = () => {
                 {/* High School */}
                 <div>
                     <h3 className="text-sm font-bold text-slate-300">Dr. Juan G. Nolasco High School</h3>
+                    <p className="text-xs text-slate-500 mb-1">2252 Tioco St., Tondo, Manila, Philippines</p>
                     <p className="text-xs text-slate-500 mb-1">Secondary Education</p>
                     <p className="text-xs text-slate-500 font-mono mt-1">Class of 2020</p>
                 </div>
@@ -39,6 +40,7 @@ const Education = () => {
                 {/* Primary */}
                 <div>
                     <h3 className="text-sm font-bold text-slate-300">Teodoro R. Yangco Elem.</h3>
+                    <p className="text-xs text-slate-500 mb-1">Dandan corner Franco St., Tondo, Philippines</p>
                     <p className="text-xs text-slate-500 mb-1">Primary Education</p>
                     <p className="text-xs text-slate-500 font-mono mt-1">Graduated 2013</p>
                 </div>

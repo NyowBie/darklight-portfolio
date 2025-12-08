@@ -25,7 +25,7 @@ const rawProjects = [
         role: "Backend Developer",
         desc: "Automated the manual document request process for students. Built a CRUD system for admins to manage and process requests efficiently.",
         tech: ["PHP", "MySQL", "Bootstrap"],
-        year: "2024"
+        year: "2023"
     },
     {
         title: "GABAY SIM",
@@ -33,97 +33,79 @@ const rawProjects = [
         role: "Scripting Logic",
         desc: "An educational Roblox game simulation teaching students proper disaster response protocols through interactive gameplay scenarios.",
         tech: ["Lua", "Roblox Studio"],
-        year: "2024"
+        year: "2025"
     }
 ];
 
 const projects = rawProjects.sort((a, b) => a.title.localeCompare(b.title));
 
 const Projects = () => {
-
-    const [activeProject, setActiveProject] = useState(0);
-    const projectRefs = useRef([]);
-
-    useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '-40% 0px -40% 0px', // Focus on the center of the screen
-            threshold: 0
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const index = Number(entry.target.getAttribute('data-index'));
-                    setActiveProject(index);
-                }
-            });
-        }, observerOptions);
-
-        projectRefs.current.forEach((el) => {
-            if (el) observer.observe(el);
-        });
-
-        return () => observer.disconnect();
-    }, []);
+    const [hoveredProject, setHoveredProject] = useState(null);
 
     return (
-        <section>
-            <h2 className="text-2xl font-bold text-white mb-8 flex items-center gap-3 border-b border-white/10 pb-4">
-                <Briefcase size={24} className="text-cyan-400" />
-                Project Experience
-            </h2>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-7xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+                <div className="p-3 rounded-full bg-cyan-950/30 text-cyan-400 border border-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.2)]">
+                    <Briefcase size={24} />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+                    Project <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Experience</span>
+                </h2>
+            </div>
 
-            <div className="space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {projects.map((p, idx) => (
                     <div
                         key={idx}
-                        ref={el => projectRefs.current[idx] = el}
-                        data-index={idx}
-                        onMouseEnter={() => setActiveProject(idx)}
-                        className={`group relative pl-8 border-l transition-all duration-500 ease-out py-2 ${activeProject === idx
-                                ? 'border-cyan-500 opacity-100 scale-[1.02]'
-                                : 'border-white/10 opacity-50 hover:opacity-100 hover:border-cyan-500/50'
-                            }`}
+                        onMouseEnter={() => setHoveredProject(idx)}
+                        onMouseLeave={() => setHoveredProject(null)}
+                        className={`group relative p-6 md:p-8 rounded-2xl border transition-all duration-500 overflow-hidden active:scale-[0.98]
+                            ${hoveredProject === idx
+                                ? 'bg-white/10 border-cyan-500/50 shadow-[0_0_50px_rgba(34,211,238,0.15)] scale-[1.02] z-10'
+                                : 'bg-white/5 border-white/10 hover:border-white/20'
+                            } backdrop-blur-xl`}
                     >
-                        {/* Timeline Dot (The "Pin") */}
-                        <div className={`absolute -left-[5px] top-6 w-[9px] h-[9px] rounded-full transition-all duration-500 ${activeProject === idx
-                                ? 'bg-cyan-400 border-none shadow-[0_0_15px_rgba(34,211,238,0.8)] scale-125'
-                                : 'bg-slate-900 border-2 border-slate-600 group-hover:border-cyan-400 group-hover:scale-110'
-                            }`}></div>
+                        {/* Gradient Glow Effect on Hover */}
+                        <div className={`absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-500/10 opacity-0 transition-opacity duration-500 ${hoveredProject === idx ? 'opacity-100' : ''}`}></div>
 
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
-                            <h3 className={`text-xl font-bold transition-colors duration-300 ${activeProject === idx ? 'text-cyan-400' : 'text-slate-100 group-hover:text-cyan-200'
-                                }`}>
-                                {p.title}
-                            </h3>
-                            <span className={`text-xs font-bold font-mono px-2 py-1 rounded border transition-colors ${activeProject === idx
-                                    ? 'text-cyan-400 bg-cyan-950/40 border-cyan-500/40'
-                                    : 'text-slate-500 bg-transparent border-transparent group-hover:text-cyan-400/70'
-                                }`}>
-                                {p.year}
-                            </span>
-                        </div>
+                        {/* Decorative Top Right Corner */}
+                        <div className={`absolute -top-10 -right-10 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl transition-opacity duration-500 ${hoveredProject === idx ? 'opacity-100' : 'opacity-0'}`}></div>
 
-                        <p className={`font-medium text-sm mb-3 transition-colors ${activeProject === idx ? 'text-violet-400' : 'text-slate-500 group-hover:text-violet-400/80'
-                            }`}>
-                            {p.subtitle} <span className="opacity-50 mx-2">//</span> {p.role}
-                        </p>
-
-                        <p className={`leading-relaxed mb-4 text-sm md:text-base transition-colors ${activeProject === idx ? 'text-slate-300' : 'text-slate-500 group-hover:text-slate-400'
-                            }`}>
-                            {p.desc}
-                        </p>
-
-                        <div className="flex flex-wrap gap-2">
-                            {p.tech.map(t => (
-                                <span key={t} className={`text-xs font-medium font-mono px-2 py-1 rounded transition-colors ${activeProject === idx
-                                        ? 'text-cyan-300 bg-cyan-950/30'
-                                        : 'text-slate-600 bg-transparent group-hover:text-slate-400'
-                                    }`}>
-                                    {t}
+                        <div className="relative z-10 flex flex-col h-full">
+                            <div className="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 className={`text-xl md:text-2xl font-bold mb-1 transition-colors duration-300 ${hoveredProject === idx ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white' : 'text-slate-100'}`}>
+                                        {p.title}
+                                    </h3>
+                                    <p className={`text-sm font-medium transition-colors duration-300 ${hoveredProject === idx ? 'text-cyan-200' : 'text-slate-400'}`}>
+                                        {p.subtitle}
+                                    </p>
+                                </div>
+                                <span className="text-xs font-bold font-mono px-3 py-1 rounded-full border border-white/10 bg-slate-900/50 text-slate-400">
+                                    {p.year}
                                 </span>
-                            ))}
+                            </div>
+
+                            <div className="mb-6 flex items-center gap-2 text-sm text-slate-300">
+                                <span className={`px-2 py-0.5 rounded text-xs font-semibold uppercase tracking-wider ${hoveredProject === idx ? 'bg-violet-500/20 text-violet-300' : 'bg-slate-800 text-slate-500'}`}>
+                                    {p.role}
+                                </span>
+                            </div>
+
+                            <p className="text-slate-400 leading-relaxed mb-6 flex-grow">
+                                {p.desc}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-auto">
+                                {p.tech.map((t, tIdx) => (
+                                    <span key={tIdx} className={`text-xs font-medium px-3 py-1.5 rounded-lg border transition-all duration-300 ${hoveredProject === idx
+                                        ? 'bg-cyan-950/40 text-cyan-300 border-cyan-500/30'
+                                        : 'bg-slate-800/50 text-slate-500 border-white/5'
+                                        }`}>
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 ))}

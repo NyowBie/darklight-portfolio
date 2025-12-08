@@ -47,7 +47,7 @@ const Resume = () => {
                         CAREER OBJECTIVE
                     </h2>
                     <p className="text-slate-300 leading-relaxed print:text-gray-800">
-                        An aspiring IT professional with hands-on experience in building web applications using React, PHP, Firebase, and modern JavaScript tools. I am eager to apply my skills in real projects, contribute to a development team, and gain industry experience through an internship or entry-level role. I am committed to learning fast, solving problems, and delivering clean, user-friendly interfaces.
+                        An aspiring IT professional with experience in building web applications using React, PHP, Firebase, and etc. I am eager to apply my skills in real projects, contribute to a development team, and gain industry experience through an internship or entry-level role. I am committed to learning fast and delivering clean, user-friendly interfaces.
                     </p>
                 </section>
 
@@ -132,7 +132,7 @@ const Resume = () => {
                         <div>
                             <div className="flex justify-between items-start mb-1">
                                 <h3 className="text-lg font-bold text-white print:text-black">PLM Online Document Request System</h3>
-                                <span className="text-sm text-indigo-400 font-mono print:text-gray-600">2024</span>
+                                <span className="text-sm text-indigo-400 font-mono print:text-gray-600">2023</span>
                             </div>
                             <p className="text-indigo-300 text-sm mb-2 font-medium print:text-gray-700">Role: Student Developer</p>
                             <ul className="list-disc list-inside text-slate-300 text-sm space-y-1 print:text-gray-800">
