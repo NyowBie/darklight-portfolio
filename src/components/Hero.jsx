@@ -55,7 +55,9 @@ const Hero = () => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                             </span>
-                            <span className="text-xs font-bold font-mono text-cyan-400 tracking-wider">CHAT ME</span>
+                            <span className="text-xs font-bold font-mono text-cyan-400 tracking-wider">
+                                CHAT ME
+                            </span>
                             <ExternalLink size={14} className="text-white opacity-0 -ml-2 group-hover/orb:opacity-100 group-hover/orb:ml-0 transition-all duration-300" />
                         </motion.a>
                     </div>
@@ -69,19 +71,23 @@ const Hero = () => {
                     className="order-2 lg:order-2 text-center lg:text-left"
                 >
                     {/* Status Badge */}
+                    {/* Status Badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/30 border border-cyan-800/50 backdrop-blur-sm mb-8 hover:bg-cyan-900/40 transition-colors">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                        <span className="text-cyan-400 text-xs font-semibold font-mono uppercase tracking-widest">Looking for Internship</span>
+                        <span className="text-xs font-bold font-mono text-cyan-400 tracking-wider">
+                            LOOKING FOR INTERNSHIP
+                        </span>
                     </div>
 
                     {/* Name Typography */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white tracking-tight mb-4">
+                    {/* Name Typography */}
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight mb-4">
                         Cedric Moaje
                     </h1>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium text-slate-400 mb-2">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-medium text-slate-400 mb-2">
                         <span className="text-lime-400">&lt;</span> Aspiring Web Developer <span className="text-lime-400">/&gt;</span>
                     </h2>
-                    <p className="text-lime-400 font-mono text-sm md:text-base mb-8 tracking-wide">
+                    <p className="text-lime-400 font-mono text-base md:text-lg mb-8 tracking-wide">
                         BSIT Student @ Pamantasan ng Lungsod ng Maynila
                     </p>
 

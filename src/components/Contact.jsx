@@ -1,10 +1,17 @@
 import React from 'react';
 import { Mail, Phone, Send, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
         <section id="contact" className="py-24 bg-slate-950 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-7xl mx-auto"
+            >
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
                     {/* Left: Info */}
@@ -104,7 +111,7 @@ const Contact = () => {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };

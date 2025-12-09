@@ -52,7 +52,10 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <a href="#" className="font-heading font-bold text-2xl text-white tracking-tight">
+                        <a
+                            href="#home"
+                            className="font-heading font-extrabold text-2xl text-white tracking-tight"
+                        >
                             Cedric M<span className="text-lime-500">.</span>
                         </a>
                     </div>

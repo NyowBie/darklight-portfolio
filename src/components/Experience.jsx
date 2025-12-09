@@ -43,7 +43,13 @@ const Experience = () => {
 
     return (
         <section id="experience" className="py-24 bg-slate-950 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-4xl mx-auto"
+            >
                 <div className="mb-16 text-center">
                     <h2 className="text-lime-400 font-mono font-medium mb-4 tracking-wide">My Journey</h2>
                     <h2 className="text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">Experience & Education</h2>
@@ -81,7 +87,7 @@ const Experience = () => {
                         </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };
