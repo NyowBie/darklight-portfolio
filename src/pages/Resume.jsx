@@ -27,11 +27,11 @@ const Resume = () => {
                     <div className="flex flex-wrap gap-4 text-slate-300 print:text-gray-700 print:text-sm print:gap-6">
                         <div className="flex items-center gap-2">
                             <Phone size={16} className="text-indigo-400 print:hidden" />
-                            <span>0991-656-6215</span>
+                            <a href="tel:09916566215" className="hover:text-indigo-400">0991-656-6215</a>
                         </div>
                         <div className="flex items-center gap-2">
                             <Mail size={16} className="text-indigo-400 print:hidden" />
-                            <a href="mailto:cedricmoaje0@gmail.com" className="hover:text-indigo-400">cedricmoaje0@gmail.com</a>
+                            <a href="mailto:theprodigee06@gmail.com" className="hover:text-indigo-400">theprodigee06@gmail.com</a>
                         </div>
                         <div className="flex items-center gap-2">
                             <MapPin size={16} className="text-indigo-400 print:hidden" />

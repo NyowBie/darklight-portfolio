@@ -1,54 +1,108 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Mail, Phone, Send, MapPin } from 'lucide-react';
 
 const Contact = () => {
-    const [status, setStatus] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setStatus('Message sent! (Demo only)');
-        setTimeout(() => setStatus(''), 3000);
-    };
-
     return (
-        <section id="contact" className="py-24 relative">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
-                <div className="grid md:grid-cols-2 gap-16 items-start">
+        <section id="contact" className="py-24 bg-slate-950 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+                    {/* Left: Info */}
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Let's work together.</h2>
-                        <p className="text-slate-400 text-lg mb-8">
-                            I'm currently available for freelance work or full-time opportunities.
-                            If you have a project that needs some creative touch, I'd love to hear about it.
+                        <h2 className="text-lime-400 font-mono font-medium mb-4 tracking-wide">Get in Touch</h2>
+                        <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">Let's Work Together</h2>
+                        <p className="text-slate-400 text-lg leading-relaxed mb-12">
+                            I'm currently looking for internship opportunities or entry-level web development roles.
+                            If you have a project in mind or just want to say hi, feel free to reach out!
                         </p>
-                        <div className="space-y-4">
-                            <a href="mailto:contact@cedricureta.com" className="block text-indigo-400 hover:text-indigo-300 hover:underline text-lg">
-                                contact@cedricureta.com
+
+                        <div className="space-y-6">
+                            <a href="mailto:theprodigee06@gmail.com" className="flex items-center gap-4 group">
+                                <div className="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 group-hover:border-cyan-500/50 group-hover:bg-cyan-500/10 transition-colors">
+                                    <Mail size={24} />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mb-1">Email Me</p>
+                                    <p className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">theprodigee06@gmail.com</p>
+                                </div>
                             </a>
-                            <div className="flex gap-6 text-slate-400">
-                                <a href="#" className="hover:text-white transition-colors">GitHub</a>
-                                <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-                                <a href="#" className="hover:text-white transition-colors">Twitter</a>
+
+                            <a href="tel:09916566215" className="flex items-center gap-4 group">
+                                <div className="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-lime-400 group-hover:border-lime-500/50 group-hover:bg-lime-500/10 transition-colors">
+                                    <Phone size={24} />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mb-1">Call Me</p>
+                                    <p className="text-lg font-bold text-white group-hover:text-lime-400 transition-colors">0991-656-6215</p>
+                                </div>
+                            </a>
+
+                            <div className="flex items-center gap-4 group">
+                                <div className="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-violet-400">
+                                    <MapPin size={24} />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mb-1">Location</p>
+                                    <p className="text-lg font-bold text-white">Manila, Philippines</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-4 p-8 rounded-2xl bg-white/5 border border-white/5">
-                        <div>
-                            <label className="block text-sm font-medium text-slate-400 mb-1">Name</label>
-                            <input type="text" required className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-indigo-500 transition-colors" placeholder="John Doe" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-slate-400 mb-1">Email</label>
-                            <input type="email" required className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-indigo-500 transition-colors" placeholder="john@example.com" />
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-slate-400 mb-1">Message</label>
-                            <textarea required rows="4" className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-indigo-500 transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
-                        </div>
-                        <button type="submit" className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors shadow-lg shadow-indigo-500/20">
-                            Send Message
-                        </button>
-                        {status && <p className="text-center text-green-400 text-sm mt-2">{status}</p>}
-                    </form>
+                    {/* Right: Form */}
+                    <div className="bg-slate-900 rounded-2xl p-8 border border-white/5 shadow-xl">
+                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label htmlFor="name" className="text-xs font-bold text-slate-400 uppercase tracking-wider">Your Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        placeholder="John Doe"
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="email" className="text-xs font-bold text-slate-400 uppercase tracking-wider">Your Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="john@example.com"
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label htmlFor="subject" className="text-xs font-bold text-slate-400 uppercase tracking-wider">Subject</label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    placeholder="Project Inquiry"
+                                    className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors"
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <label htmlFor="message" className="text-xs font-bold text-slate-400 uppercase tracking-wider">Message</label>
+                                <textarea
+                                    id="message"
+                                    rows={4}
+                                    placeholder="How can I help you?"
+                                    className="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-200 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-500 transition-colors resize-none"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full py-4 bg-lime-500 text-slate-950 font-bold rounded-lg hover:bg-lime-400 transition-colors flex items-center justify-center gap-2"
+                            >
+                                <Send size={18} />
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </section>

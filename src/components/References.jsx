@@ -1,26 +1,35 @@
 import React from 'react';
-import { Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Users, Phone } from 'lucide-react';
 
 const References = () => {
     return (
-        <section>
-            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2 uppercase tracking-wider">
-                <Users size={20} className="text-violet-500" />
+        <section className="relative">
+            <h2 className="text-2xl font-heading font-bold text-white mb-8 flex items-center gap-3">
+                <span className="p-2 rounded-lg bg-white/5 border border-white/10">
+                    <Users size={24} className="text-violet-400" />
+                </span>
                 References
             </h2>
 
-            <div className="space-y-4">
-                <div className="p-4 bg-white/5 border border-white/5 rounded-xl hover:border-cyan-500/30 transition-colors">
-                    <h3 className="text-sm font-bold text-white">Jackson C. Salas</h3>
-                    <p className="text-xs text-cyan-400 font-medium mb-1">SHS Faculty Member</p>
-                    <p className="text-xs text-slate-500 font-mono">09750320407</p>
-                </div>
-
-                <div className="p-4 bg-white/5 border border-white/5 rounded-xl hover:border-cyan-500/30 transition-colors">
-                    <h3 className="text-sm font-bold text-white">Katrina Shaine D. Suñga</h3>
-                    <p className="text-xs text-cyan-400 font-medium mb-1">Accounting Clerk, Golden Advance</p>
-                    <p className="text-xs text-slate-500 font-mono">09618353048</p>
-                </div>
+            <div className="grid gap-4">
+                {[
+                    { name: "Jackson C. Salas", role: "SHS Faculty Member", contact: "09750320407" },
+                    { name: "Katrina Shaine D. Suñga", role: "Accounting Clerk, Golden Advance", contact: "09618353048" }
+                ].map((ref, i) => (
+                    <motion.div
+                        key={i}
+                        whileHover={{ scale: 1.02 }}
+                        className="p-5 bg-white/5 border border-white/5 rounded-xl hover:bg-slate-800/50 hover:border-cyan-500/30 transition-all cursor-default group"
+                    >
+                        <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">{ref.name}</h3>
+                        <p className="text-sm text-cyan-500/80 mb-2">{ref.role}</p>
+                        <div className="flex items-center gap-2 text-slate-400 text-xs font-mono">
+                            <Phone size={12} />
+                            <span>{ref.contact}</span>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

@@ -10,7 +10,9 @@ export default {
                 background: '#020617',
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                sans: ['Inter', 'sans-serif'],
+                heading: ['Outfit', 'sans-serif'],
+                mono: ['Space Mono', 'monospace'],
             },
         },
     },
