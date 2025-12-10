@@ -19,7 +19,7 @@ const Projects = () => {
             title: "ALERTO MNL",
             category: "Systems",
             desc: "A comprehensive crime and incident reporting system designed for Manila. Includes real-time mapping, user reporting, and admin dashboard.",
-            tech: ["React", "Firebase", "Leaflet"],
+            tech: ["React", "PHP", "MySQL", "MapBox"],
             year: "2025",
             links: { live: "#", repo: "#" }
         },
