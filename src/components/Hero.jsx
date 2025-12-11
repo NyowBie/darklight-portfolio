@@ -122,7 +122,7 @@ const Hero = () => {
                             <div className="p-2 rounded-lg bg-violet-500/10 text-violet-400 group-hover:bg-violet-500 group-hover:text-white transition-colors">
                                 <Phone size={20} />
                             </div>
-                            <span className="text-slate-200 font-medium font-outfit">0991-656-6215</span>
+                            <span className="text-slate-200 font-medium font-outfit">Call Me</span>
                         </motion.a>
                     </div>
 
