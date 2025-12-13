@@ -34,13 +34,13 @@ const Contact = () => {
                                 </div>
                             </a>
 
-                            <a href="tel:09916566215" className="flex items-center gap-4 group">
+                            <a href="tel:09062278962" className="flex items-center gap-4 group">
                                 <div className="w-12 h-12 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-lime-400 group-hover:border-lime-500/50 group-hover:bg-lime-500/10 transition-colors">
                                     <Phone size={24} />
                                 </div>
                                 <div>
                                     <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mb-1">Call Me</p>
-                                    <p className="text-lg font-bold text-white group-hover:text-lime-400 transition-colors">0991-656-6215</p>
+                                    <p className="text-lg font-bold text-white group-hover:text-lime-400 transition-colors">0906-227-8962</p>
                                 </div>
                             </a>
 

@@ -27,7 +27,7 @@ const Resume = () => {
                     <div className="flex flex-wrap gap-4 text-slate-300 print:text-gray-700 print:text-sm print:gap-6">
                         <div className="flex items-center gap-2">
                             <Phone size={16} className="text-indigo-400 print:hidden" />
-                            <a href="tel:09916566215" className="hover:text-indigo-400">0991-656-6215</a>
+                            <a href="tel:09062278962" className="hover:text-indigo-400">0906-227-8962</a>
                         </div>
                         <div className="flex items-center gap-2">
                             <Mail size={16} className="text-indigo-400 print:hidden" />
