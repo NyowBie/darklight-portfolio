@@ -23,7 +23,7 @@ const Experience = () => {
             institution: "Dr. Juan G. Nolasco High School",
             date: "2016 – 2020",
             type: "education",
-            desc: "Active student on science class and join Mr.Science 2018."
+            desc: "Active student."
         },
         {
             title: "Primary",
