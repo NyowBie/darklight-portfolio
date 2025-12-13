@@ -19,13 +19,6 @@ const Experience = () => {
             desc: "Graduated with High Honors. Focused on programming fundamentals and computer systems servicing."
         },
         {
-            title: "Exploiting Game on Roblox",
-            institution: "Self-Employed",
-            date: "2021 – 2022",
-            type: "hobby",
-            desc: "Exploited game on Roblox using lua script and krnl executor."
-        },
-        {
             title: "Secondary Education",
             institution: "Dr. Juan G. Nolasco High School",
             date: "2016 – 2020",
