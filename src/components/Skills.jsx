@@ -31,7 +31,7 @@ const Skills = () => {
             title: "Backend Development",
             icon: Server,
             skills: [
-                { name: "PHP", level: "Intermediate" },
+                { name: "PHP", level: "Beginner" },
                 { name: "MySQL", level: "Intermediate" },
                 { name: "Firebase", level: "Intermediate" },
                 { name: "Node.js", level: "Beginner" },
