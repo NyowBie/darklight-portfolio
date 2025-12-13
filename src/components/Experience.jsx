@@ -16,7 +16,7 @@ const Experience = () => {
             institution: "AMA Computer Learning Center",
             date: "2020 – 2022",
             type: "education",
-            desc: "Graduated with High Honors. Focused on programming fundamentals and computer systems servicing."
+            desc: "Graduated with Honors. Focused on programming fundamentals."
         },
         {
             title: "Secondary Education",
